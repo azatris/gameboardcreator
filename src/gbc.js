@@ -15,7 +15,8 @@ var layer = new Kinetic.Layer();
 
 var boardSizeX = parseInt(prompt("Please insert the horizontal number of tiles:","24"));
 var boardSizeY = parseInt(prompt("Please insert the vertical number of tiles:","8"));
-var percentage = parseInt(prompt("Please insert the percent (%) of land tiles:","20")) / 100;
+var landPercentage = parseInt(prompt("Please insert the percent (%) of land tiles:","20")) / 100;
+var cityPercentage = parseInt(prompt("Please insert the percent (%) of city tiles:","5")) / 100;
 
 // var boardSizeX = 12;
 // var boardSizeY = 36;
@@ -50,8 +51,17 @@ function drawTileAt(x, y) {
     layer.add(aTile);
     stage.add(layer);
   };
-  if (Math.random() > percentage) {
-    tile.src = "bin/tile_sea.png";
+  if (Math.random() < cityPercentage) {
+    tile.src = "bin/tile_city.png";
+  } else if (Math.random() > landPercentage) {
+    var n = Math.random();
+    if (n > 0.66) {
+      tile.src = "bin/tile_sea_1.png";
+    } else if (n > 33) {
+      tile.src = "bin/tile_sea_2.png";
+    } else {
+      tile.src = "bin/tile_sea_3.png";
+    }
   } else {
     tile.src = "bin/tile_land.png";
   }
