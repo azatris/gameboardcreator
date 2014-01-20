@@ -57,7 +57,7 @@ function drawTileAt(x, y) {
     var n = Math.random();
     if (n > 0.66) {
       tile.src = "bin/tile_sea_1.png";
-    } else if (n > 33) {
+    } else if (n > 0.33) {
       tile.src = "bin/tile_sea_2.png";
     } else {
       tile.src = "bin/tile_sea_3.png";
