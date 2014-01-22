@@ -30,7 +30,7 @@ for (var i = 0; i < boardSizeY; i++) {
   for (var j = 0; j < boardSizeX; j++) {
     var x = i % 2 == 0 ? tileWidth*j*scale : (tileWidth*j + tileWidth/2)*scale;
     var y = tileHeight*0.75*i*scale;
-    drawTileAt(x, y);  
+    drawTileAt(x*1.05, y*1.05);  
   }
 }
 
